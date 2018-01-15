@@ -1,0 +1,25 @@
+﻿@model IEnumerable<AdvancedAccountingCustomerTracker.Models.Customer>
+
+<h2>Customers</h2>
+
+    @Html.ActionLink("Create New", "CustomerForm", 0)
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+        </tr>
+    </thead>
+
+    @foreach (var customer in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(customer.Name, "CustomerForm", "Customers", new { Id = customer.Id }, null)
+            </td>
+        </tr>
+
+    }
+</table>

@@ -1,0 +1,26 @@
+﻿@model AdvancedAccountingCustomerTracker.Models.Accountant
+
+@if (Model.Id == 0)
+{
+    <h2>
+        New Accountant
+    </h2>
+}
+else
+{
+    <h2>
+        Edit Accountant
+    </h2>
+}
+
+@using (@Html.BeginForm("Save", "Accountants"))
+{
+
+    <div class="form-group">
+        @Html.LabelFor(a => a.Name)
+        @Html.TextBoxFor(a => a.Name, new { @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(c => c.Id)
+    <button type="submit" class="btn btn-primary"> Save </button>
+}
